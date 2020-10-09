@@ -1,0 +1,19 @@
+@mixin normal-shadow($x, $y, $s, $color) {
+    box-shadow: $x $y $s $color;
+}
+
+@mixin link-style($color, $size) {
+    text-decoration: none;
+    font-size: $size;
+    color: $color;
+    cursor: pointer;
+}
+@mixin buttons($py, $px, $background, $color) {
+    outline: none;
+    border: none;
+    color: $color;
+    padding: $py $px;
+    border-radius: 5px;
+    background: $background;
+    cursor: pointer;
+}
