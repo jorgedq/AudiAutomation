@@ -9,5 +9,6 @@ body {
     font-family: $font-family-tittle;
 }
 main {
-    padding-top: 14vh;
+    //padding-top: 14vh;
+    @include wrapper(14vh, 4em);
 }

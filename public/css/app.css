@@ -11,13 +11,15 @@ body {
 }
 
 main {
-  padding-top: 14vh;
+  padding: 14vh 4em 0;
 }
 
 header {
   position: fixed;
   width: 100%;
   top: 0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 9;
 }
 
 .navbar {
@@ -28,7 +30,6 @@ header {
   padding: 0.5em;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .left-section {
@@ -79,20 +80,112 @@ header {
 
 .options__recicle {
   margin-left: 4em;
-  outline: none;
   border: none;
-  color: #fff;
-  padding: 0.5em 1em;
-  border-radius: 5px;
-  background: #ff4949;
+  color: #e3342f;
   cursor: pointer;
 }
 .options__recicle:hover {
-  background: #f00;
+  text-decoration: underline;
 }
 
 .darkmode {
   margin-right: 4em;
+}
+
+.txt-noauth {
+  margin-left: 4em;
+  display: inline-block;
+}
+
+.body {
+  min-height: 80vh;
+}
+
+.body-tittle {
+  color: #444;
+  margin-top: 0.5em;
+}
+
+.cards-section {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1em;
+}
+
+.card {
+  position: relative;
+  margin: 1em;
+  border: 1px solid #c2c1c1;
+  border-radius: 10px;
+  width: 20vw;
+  height: 45vh;
+  max-width: 20vw;
+  max-height: 45vh;
+  padding: 1em;
+  display: grid;
+  grid-template-rows: 15% 75% 10%;
+  grid-template-areas: "cardHeader" "cardBody" "cardFooter";
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.card--none {
+  border-top: 10px solid #888;
+}
+
+.card--normal {
+  border-top: 10px solid #38c172;
+}
+
+.card--warning {
+  border-top: 10px solid #ffed4a;
+}
+
+.card--danger {
+  border-top: 10px solid #e3342f;
+}
+
+.card .card__tittle {
+  grid-area: cardHeader;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.card__description {
+  grid-area: cardBody;
+  font-family: "Lato", sans-serif;
+  font-size: 0.95rem;
+}
+
+.card__actions {
+  grid-area: cardFooter;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__actions--edit,
+.card__actions--delete {
+  font-size: 1.3em;
+}
+
+.card__actions--edit {
+  color: #444;
+}
+.card__actions--edit:hover {
+  color: #000;
+}
+
+.card__actions--delete {
+  outline: none;
+  border: none;
+  color: #444;
+  cursor: pointer;
+}
+.card__actions--delete:hover {
+  color: #e3342f;
+}
+
+.form {
+  display: inline-block;
 }
 
 /*# sourceMappingURL=app.css.map */

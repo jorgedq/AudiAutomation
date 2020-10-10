@@ -1,0 +1,79 @@
+.body {
+    min-height: 80vh;
+}
+.body-tittle {
+    color: #444;
+    margin-top: 0.5em;
+}
+.cards-section {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1em;
+}
+.card {
+    position: relative;
+    margin: 1em;
+    border: 1px solid rgb(194, 193, 193);
+    border-radius: 10px;
+    width: 20vw;
+    height: 45vh;
+    max-width: 20vw;
+    max-height: 45vh;
+    padding: 1em;
+    display: grid;
+    grid-template-rows: 15% 75% 10%;
+    grid-template-areas:
+        "cardHeader"
+        "cardBody"
+        "cardFooter";
+    @include normal-shadow(0, 4px, 4px, rgba(0, 0, 0, 0.25));
+}
+.card--none {
+    @include card-border($none);
+}
+.card--normal {
+    @include card-border($green);
+}
+.card--warning {
+    @include card-border($yellow);
+}
+.card--danger {
+    @include card-border($red);
+}
+.card .card__tittle {
+    grid-area: cardHeader;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+.card__description {
+    grid-area: cardBody;
+    font-family: $font-family-body;
+    font-size: 0.95rem;
+}
+.card__actions {
+    grid-area: cardFooter;
+    display: flex;
+    justify-content: space-between;
+}
+.card__actions--edit,
+.card__actions--delete {
+    font-size: 1.3em;
+}
+.card__actions--edit {
+    color: $button-light;
+    &:hover {
+        color: #000;
+    }
+}
+.card__actions--delete {
+    outline: none;
+    border: none;
+    color: $button-light;
+    cursor: pointer;
+    &:hover {
+        color: $red;
+    }
+}
+.form {
+    display: inline-block;
+}

@@ -17,3 +17,14 @@
     background: $background;
     cursor: pointer;
 }
+@mixin buttons-link($py, $px, $color) {
+    border: none;
+    color: $color;
+    cursor: pointer;
+}
+@mixin wrapper($tb, $xy) {
+    padding: $tb $xy 0;
+}
+@mixin card-border($color) {
+    border-top: 10px solid $color;
+}

@@ -42,7 +42,7 @@
                     @else
                         <li class="list-item">
                             <a class="list-link list-link--name" href="#" role="button">
-                                {{ Auth::user()->name }}
+                                {{ Auth::user()->name }}&nbsp;<i class="fas fa-user"></i>
                             </a>
                             
                         </li>
@@ -50,7 +50,7 @@
                              <a class="list-link" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Cerrar Sesión') }}
+                                        {{ __('Cerrar Sesión') }}&nbsp;<i class="fas fa-sign-out-alt"></i>
                             </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                    @csrf
@@ -61,20 +61,21 @@
             </div>
         </nav>
         <div class="options">
-            <button class="options__recicle">
-                <i class="fas fa-trash-alt"></i>&nbsp;Papelera De Reciclaje
-            </button>
+            @guest
+                <p class="txt-noauth" href="#">Crea y organiza rapidamente tus tareas diarias</p>
+            @endguest
+            @auth
+            <a class="options__recicle">
+                <i class="fas fa-trash-restore"></i>&nbsp;Papelera De Reciclaje
+            </a>
+            @endauth
             <div class="darkmode">dark mode</div>
         </div>
-        <hr/>
         </Header>
         <main>
             @yield('content')
         </main>
     </div>
-    <!-- <script src="/js/bootstrap.min.js" defer></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>  -->
     <script src="/js/app.js"></script>
 </body>
 </html>

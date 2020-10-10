@@ -15,19 +15,19 @@ class InitialData extends Migration
     {
         DB::table('types')->insert([
             'name' => 'Ninguno',
-            'color' => '#fffff'
+            'color' => 'card--none'
         ]);
         DB::table('types')->insert([
             'name' => 'Normal',
-            'color' => 'rgb(40,184,0)'
+            'color' => 'card--normal'
         ]);
         DB::table('types')->insert([
-            'name' => 'Important',
-            'color' => 'rgb(254,238,22)'
+            'name' => 'Importante',
+            'color' => 'card--warning'
         ]);
         DB::table('types')->insert([
             'name' => 'Muy Importante',
-            'color' => 'rgb(254,22,22)'
+            'color' => 'card--danger'
         ]);
     }
 
