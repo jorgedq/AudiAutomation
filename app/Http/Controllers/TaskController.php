@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Task;
 
 class TaskController extends Controller
 {
@@ -13,7 +14,8 @@ class TaskController extends Controller
      */
     public function index()
     {
-        //
+        $tareas = Task::orderBy('id', 'DESC')->get();
+        return view('home', compact('tareas'));
     }
 
     /**
@@ -23,7 +25,7 @@ class TaskController extends Controller
      */
     public function create()
     {
-        //
+        return view('createTasks');
     }
 
     /**
@@ -32,9 +34,15 @@ class TaskController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request, $id)
+    {           
+        $tareas = new Task;
+        $tareas->title=$request->title;
+        $tareas->description=$request->description;
+        $tareas->user_id=$id;
+        $tareas->type_id=$request->type_id;
+        $tareas->save();
+        return redirect('home');
     }
 
     /**
@@ -68,9 +76,10 @@ class TaskController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tareas = Task::find($id);
+        $tareas->update($request->all());
+        return redirect('home');
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -79,6 +88,8 @@ class TaskController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tareas = Task::find($id);
+        $tareas->delete();
+        return redirect('home');
     }
 }
