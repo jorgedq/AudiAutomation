@@ -2,21 +2,18 @@
 
 @section('content')
 
-                <div class="body">
-                    @if (session('status'))
-                        <div>
-                            {{ session('status') }}
-                        </div>
-                    @endif
+    <div class="body">
+        @if (session('status'))
+            <div>
+                {{ session('status') }}
+            </div>
+        @endif       
+    </div>
 
-                    <div id="colocar">
-                        Home
-                    </div>
-                    
-                </div>
-
-    <button id="prueba" type="button" class="btn-add">ADD TASK</button>
+    <button  type="button" class="btn-add">
+        {!! Form::open(['url'=>'task/'.Auth::user()->id, 'method'=>'GET']) !!}
+          {!! Form::submit('Tarea') !!}
+        {!! Form::close() !!}
+    </button>
     	
-
-
 @endsection
