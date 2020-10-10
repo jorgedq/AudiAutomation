@@ -37,7 +37,7 @@ class TaskController extends Controller
     public function store(Request $request, $id)
     {           
         $tareas = new Task;
-        $tareas->title=$request->title;
+        $tareas->tittle=$request->title;
         $tareas->description=$request->description;
         $tareas->user_id=$id;
         $tareas->type_id=$request->type_id;
