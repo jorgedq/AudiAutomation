@@ -29,7 +29,7 @@
                         <li class="list-item">
                             <a class="list-link" href="{{ url('/home') }}">Inicio</a>
                         </li>
-                        @else
+                    @else
                             <li class="list-item">
                                 <a class="list-link" href="{{ route('login') }}">Iniciar Sesión</a>
                             </li>
