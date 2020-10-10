@@ -10,7 +10,7 @@
         @endif
 
         <div>
-            <form method="post" action="/task">
+            {!! Form::open(['url'=>'task/'.Auth::user()->id, 'method'=>'POST']) !!}
                 {{ csrf_field() }}
                   <div class="">
                     <label class="">Titulo</label>
@@ -25,9 +25,9 @@
                     <input type="number" class="" name="type_id" required>
                   </div><br>
                   <a href="{{ route('home') }}" class="">Cancelar</a>
-                <button type="submit" class="">Crear Tarea</button>
+                    {!! Form::submit('CREATE TASK', ['class'=>'btn-add']) !!}
               </div>
-          </form>
+              {!! Form::close() !!}
         </div>
                     
     </div>
