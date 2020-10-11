@@ -1,159 +1,199 @@
 .body {
-  min-height: 80vh;
+    min-height: 80vh;
 }
 .body-tittle {
-  color: #444;
-  margin-top: 0.5em;
+    color: #444;
+    margin-top: 0.5em;
 }
 .cards-section {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1em;
 }
 .card {
-  word-break: break-all;
-  position: relative;
-  margin: 1em 0.7em;
-  border: 1px solid rgb(194, 193, 193);
-  border-radius: 10px;
-  width: 20vw;
-  height: 40vh;
-  max-width: 20vw;
-  max-height: 45vh;
-  padding: 0.7em;
-  display: grid;
-  grid-template-rows: 20% 70% 10%;
-  grid-template-areas:
-    'cardHeader'
-    'cardBody'
-    'cardFooter';
-  @include normal-shadow(0, 4px, 4px, rgba(0, 0, 0, 0.25));
+    word-break: break-all;
+    position: relative;
+    margin: 1em 0.7em;
+    border: 1px solid rgb(194, 193, 193);
+    border-radius: 10px;
+    width: 20vw;
+    height: 40vh;
+    max-width: 20vw;
+    max-height: 45vh;
+    padding: 0.7em;
+    display: grid;
+    grid-template-rows: 20% 70% 10%;
+    grid-template-areas:
+        "cardHeader"
+        "cardBody"
+        "cardFooter";
+    @include normal-shadow(0, 4px, 4px, rgba(0, 0, 0, 0.25));
 }
 .card--none {
-  @include card-border($none);
+    @include card-border($none);
 }
 .card--normal {
-  @include card-border($green);
+    @include card-border($green);
 }
 .card--warning {
-  @include card-border($yellow);
+    @include card-border($yellow);
 }
 .card--danger {
-  @include card-border($red);
+    @include card-border($red);
 }
 .card .card__tittle {
-  grid-area: cardHeader;
-  display: block;
-  font-size: 1.3rem;
-  font-weight: 700;
+    grid-area: cardHeader;
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 700;
 }
 .card__description {
-  grid-area: cardBody;
-  font-family: $font-family-body;
-  font-size: 0.95rem;
+    grid-area: cardBody;
+    font-family: $font-family-body;
+    font-size: 0.95rem;
 }
 .card__actions {
-  grid-area: cardFooter;
-  display: flex;
-  justify-content: space-between;
+    grid-area: cardFooter;
+    display: flex;
+    justify-content: space-between;
 }
 .card__actions--edit,
 .card__actions--delete {
-  font-size: 1.3em;
+    font-size: 1.3em;
 }
 .card__actions--edit {
-  color: $button-light;
-  &:hover {
-    color: #000;
-  }
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: $button-light;
+    &:hover {
+        color: #000;
+    }
 }
 .card__actions--delete {
-  outline: none;
-  border: none;
-  color: $button-light;
-  cursor: pointer;
-  &:hover {
-    color: $red;
-  }
+    outline: none;
+    border: none;
+    color: $button-light;
+    cursor: pointer;
+    &:hover {
+        color: $red;
+    }
 }
 .form {
-  display: inline-block;
+    display: inline-block;
 }
 
 .newtask {
-  background: $body-bg;
-  border: 1px solid rgb(212, 211, 211);
-  width: 20vw;
-  height: 50vh;
-  position: fixed;
-  right: calc((20vw + 20px + 1em) * -1);
-  bottom: 110px;
-  display: flex;
-  flex-direction: column;
-  border-radius: 10px;
-  padding: 1em;
-  transition: 0.3s right;
-  //shadow
-  box-shadow: 0 4px 4px #00000075;
-  &.active-taskform {
-    right: 20px;
+    background: $body-bg;
+    border: 1px solid rgb(212, 211, 211);
+    width: 20vw;
+    height: 50vh;
+    position: fixed;
+    right: calc((20vw + 20px + 1em) * -1);
     bottom: 110px;
-  }
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 1em;
+    transition: 0.3s right;
+    //shadow
+    box-shadow: 0 4px 4px #00000075;
+    &.active-taskform {
+        right: 20px;
+        bottom: 110px;
+    }
 }
 .newtask__tittle {
-  border-radius: 5px;
-  padding: 0.3em 0;
-  //background: blue;
-  font-weight: bold;
-  text-align: center;
-  color: blue;
-  text-shadow: 0 2px 2px rgb(112, 112, 204);
-  display: block;
+    border-radius: 5px;
+    padding: 0.3em 0;
+    //background: blue;
+    font-weight: bold;
+    text-align: center;
+    color: blue;
+    text-shadow: 0 2px 2px rgb(112, 112, 204);
+    display: block;
 }
 .newtask__form {
-  margin-top: 0.5em;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+    margin-top: 0.5em;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 .newtask__form-description {
-  resize: none;
+    resize: none;
 }
 .taskform-submit {
-  outline: none;
-  border: none;
-  background-color: rgb(15, 128, 15);
-  color: white;
-  padding: 0.5em 0;
-  cursor: pointer;
-  font-family: $font-family-tittle;
-  border-radius: 5px;
-  font-size: 1.1rem;
-  font-weight: 700;
+    outline: none;
+    border: none;
+    background-color: rgb(15, 128, 15);
+    color: white;
+    padding: 0.5em 0;
+    cursor: pointer;
+    font-family: $font-family-tittle;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 700;
 }
 
 .btn-add {
-  color: white;
-  background: $navbar-color;
-  height: 75px;
-  width: 75px;
-  border-radius: 37.5px;
-  position: fixed;
-  bottom: 20px;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 4px rgb(0, 0, 0, 0.25);
-  right: 3em;
-  i {
-    font-size: 2rem;
-  }
+    color: white;
+    background: $navbar-color;
+    height: 75px;
+    width: 75px;
+    border-radius: 37.5px;
+    position: fixed;
+    bottom: 20px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 4px rgb(0, 0, 0, 0.25);
+    right: 3em;
+    i {
+        font-size: 2rem;
+    }
 }
 .btn-add:active,
 .btn-add:focus {
-  outline: none;
+    outline: none;
 }
 .btn-add:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 6px rgb(0, 0, 0, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 6px rgb(0, 0, 0, 0.5);
+}
+
+.icon,
+.icon-two {
+    position: relative;
+}
+.icon::after {
+    content: "Eliminar";
+    font-size: 0.8rem;
+    margin-left: 0.5em;
+    padding: 0.3em;
+    border-radius: 5px;
+    font-family: $font-family-tittle;
+}
+
+.icon--trash:hover::after {
+    background: #f8d7da;
+    color: $red;
+}
+.icon--edit::after {
+    content: "Editar";
+}
+.icon--edit:hover::after {
+    background: #cce5ff;
+    color: #004085;
+}
+.icon--restore::after {
+    content: "Restaurar";
+}
+.icon--restore:hover::after {
+    background: #cce5ff;
+    color: #004085;
+}
+.empty-recicle-message {
+    margin-top: 2em;
+    text-align: center;
+    color: #888;
 }

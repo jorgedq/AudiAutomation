@@ -21,3 +21,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/task', 'TaskController@create');
 Route::post('/task', 'TaskController@store');
 Route::delete('/task/{id}', 'TaskController@destroy');
+
+//recicle bin routes
+Route::get('/recicle', 'RecicleBinController@index');
+Route::post('/recicle/{id}', 'RecicleBinController@restore');
+Route::delete('/recicle/{id}', 'RecicleBinController@destroy');

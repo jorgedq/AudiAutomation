@@ -79,8 +79,37 @@ header {
   align-items: center;
 }
 
-.options__recicle {
+.options {
   margin-left: 4em;
+  list-style: none;
+}
+
+.options__item--home {
+  margin-right: 1em;
+}
+
+.options__link {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #666;
+  cursor: pointer;
+}
+.options__link:hover {
+  color: #222;
+  text-decoration: underline;
+}
+
+.options__link--red {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #ca5f5b;
+  cursor: pointer;
+}
+.options__link--red:hover {
+  color: #e3342f;
+}
+
+.options__recicle {
   border: none;
   color: #e3342f;
   cursor: pointer;
@@ -171,6 +200,9 @@ header {
 }
 
 .card__actions--edit {
+  outline: none;
+  border: none;
+  cursor: pointer;
   color: #444;
 }
 .card__actions--edit:hover {
@@ -273,6 +305,49 @@ header {
   box-shadow: 0 8px 6px rgba(0, 0, 0, 0.5);
 }
 
+.icon,
+.icon-two {
+  position: relative;
+}
+
+.icon::after {
+  content: "Eliminar";
+  font-size: 0.8rem;
+  margin-left: 0.5em;
+  padding: 0.3em;
+  border-radius: 5px;
+  font-family: "Karla", sans-serif;
+}
+
+.icon--trash:hover::after {
+  background: #f8d7da;
+  color: #e3342f;
+}
+
+.icon--edit::after {
+  content: "Editar";
+}
+
+.icon--edit:hover::after {
+  background: #cce5ff;
+  color: #004085;
+}
+
+.icon--restore::after {
+  content: "Restaurar";
+}
+
+.icon--restore:hover::after {
+  background: #cce5ff;
+  color: #004085;
+}
+
+.empty-recicle-message {
+  margin-top: 2em;
+  text-align: center;
+  color: #888;
+}
+
 .validation {
   display: block;
 }
@@ -288,6 +363,19 @@ header {
   color: #e3342f;
   margin-top: 0.3em;
   border-radius: 10px;
+}
+
+.alert {
+  margin-top: 0.3em;
+  display: block;
+  border-radius: 10px;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}
+
+.alert__text {
+  padding: 0.5em;
+  color: #856404;
 }
 
 /*# sourceMappingURL=app.css.map */

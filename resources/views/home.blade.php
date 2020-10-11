@@ -21,9 +21,9 @@
                 <p class="card__description">{{$tarea->description}}</p>
                 <div class="card__actions">
                         {!! Form::open(['url'=>'task/'.$tarea->id, 'method'=>'DELETE','onsubmit'=>'return confirm("¿ Estas seguro de realizar esta acccion ?")']) !!}
-                            <button class="card__actions--delete"type="submit"><i class="fas fa-trash-alt"></i></button>
+                            <button class="card__actions--delete"type="submit"><i class="fas fa-trash-alt icon icon--trash"></i></button>
                         {!! Form::close() !!}
-                    <a class="card__actions--edit"href="#"><i class="fas fa-edit"></i></a>
+                    <button class="card__actions--edit"><i class="fas fa-edit icon icon--edit"></i></button>
                 </div>
             </article>
         @endforeach
