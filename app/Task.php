@@ -11,6 +11,11 @@ class Task extends Model
 
     protected $table='tasks';
     protected $guarded = ['id'];
-    protected $fillable = ['tittle','description'];
+    protected $fillable = ['tittle','description','type_id'];
+
+    public function type()
+    {
+        return $this->belongsTo('App\Type');
+    }
     
 }

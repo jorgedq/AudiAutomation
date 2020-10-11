@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- csss styles -->
     <!-- link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}" -->
-    <link rel="stylesheet" href="{{asset('/css/complements.css')}}">
     <link rel="stylesheet" href="{{asset('/css/app.css')}}">
     <!-- icons -->
     <script src="https://kit.fontawesome.com/2e148be222.js" crossorigin="anonymous"></script>

@@ -5,10 +5,18 @@
     <div class="body">
     
         <h1 class="body-tittle">Tareas Pendientes</h1>
+        @if ($errors->any())
+            <div class="validation">
+                <ul class="validation__list">
+                    @foreach ($errors->all() as $error)
+                        <li class="validation__list-item">{{ $error }}</li>
+                    @endforeach 
+                </ul>
+            </div>
+        @endif
         <div class="cards-section">
-        @foreach($tareas as $tarea)
-          @if($tarea->type_id == 1 && $tarea->user_id == Auth::user()->id)
-            <article class="card card--none">
+        @foreach(Auth::user()->tasks as $tarea)
+            <article class="card {{$tarea->type->color}}">
                 <h2 class="card__tittle">{{$tarea->tittle}}</h2>
                 <p class="card__description">{{$tarea->description}}</p>
                 <div class="card__actions">
@@ -18,87 +26,25 @@
                     <a class="card__actions--edit"href="#"><i class="fas fa-edit"></i></a>
                 </div>
             </article>
-           @endif
         @endforeach
-
-        @foreach($tareas as $tarea )
-          @if($tarea->type_id == 2 && $tarea->user_id == Auth::user()->id)
-            <article class="card card--normal">
-                <h2 class="card__tittle">{{$tarea->tittle}}</h2>
-                <p class="card__description">{{$tarea->description}}</p>
-                <div class="card__actions">
-                    <form class="form" method="POST" action="">
-                        @csrf
-                        @method('DELETE')
- 
-                        <button class="card__actions--delete"type="submit"><i class="fas fa-trash-alt"></i></button>
-                    </form>
-                    <a class="card__actions--edit"href="#"><i class="fas fa-edit"></i></a>
-                </div>
-            </article>
-            @endif
-        @endforeach
-
-        @foreach($tareas as $tarea)
-          @if($tarea->type_id == 3 && $tarea->user_id == Auth::user()->id)
-            <article class="card card--warning">
-                <h2 class="card__tittle">{{$tarea->tittle}}</h2>
-                <p class="card__description">{{$tarea->description}}</p>
-                <div class="card__actions">
-                    <form class="form" method="POST" action="">
-                        @csrf
-                        @method('DELETE')
- 
-                        <button class="card__actions--delete"type="submit"><i class="fas fa-trash-alt"></i></button>
-                    </form>
-                    <a class="card__actions--edit"href="#"><i class="fas fa-edit"></i></a>
-                </div>
-            </article>
-            @endif
-        @endforeach
-
-        @foreach($tareas as $tarea)
-          @if($tarea->type_id == 4 && $tarea->user_id == Auth::user()->id)
-            <article class="card card--danger">
-                <h2 class="card__tittle">{{$tarea->tittle}}</h2>
-                <p class="card__description">{{$tarea->description}}</p>
-                <div class="card__actions">
-                    <form class="form" method="POST" action="">
-                        @csrf
-                        @method('DELETE')
- 
-                        <button class="card__actions--delete"type="submit"><i class="fas fa-trash-alt"></i></button>
-                    </form>
-                    <a class="card__actions--edit"href="#"><i class="fas fa-edit"></i></a>
-                </div>
-            </article>
-            @endif
-        @endforeach
-
-        @foreach($tareas as $tarea)
-          @if($tarea->type_id == 5 && $tarea->user_id == Auth::user()->id)
-            <article class="card card--normal">
-                <h2 class="card__tittle">{{$tarea->tittle}}</h2>
-                <p class="card__description">{{$tarea->description}}</p>
-                <div class="card__actions">
-                    <form class="form" method="POST" action="">
-                        @csrf
-                        @method('DELETE')
- 
-                        <button class="card__actions--delete"type="submit"><i class="fas fa-trash-alt"></i></button>
-                    </form>
-                    <a class="card__actions--edit"href="#"><i class="fas fa-edit"></i></a>
-                </div>
-            </article>
-        </div> 
-        @endif
-        @endforeach
-
-        <button id="prueba" type="button" >
-            {!! Form::open(['url'=>'task', 'method'=>'GET']) !!}
-              {!! Form::submit('ADD TASK', ['class'=>'btn-add']) !!}
+        <!-- Add Form Task -->
+        <div class="newtask" id="taskform">
+            <div class="newtask__tittle">Nueva Tarea</div>
+            {!! Form::open(['url'=>'/task','id'=>'form-task', 'class'=>'newtask__form','method'=>'post']) !!}
+                {!! Form::select('type_id',$types, ['class'=>'']) !!}
+                {!! Form::text('titulo', null, ['class'=>'newtask__form-title','placeholder'=>'Título']) !!}
+                <textarea
+                    class="newtask__form-description"
+                    name="descripcion"
+                    id="description"
+                    cols="30"
+                    rows="8"
+                    placeholder="Descripción"
+                ></textarea>
+                {!! Form::submit('Aceptar', ['id'=>'addTask','class'=>'taskform-submit']) !!}
             {!! Form::close() !!}
-        </button>
+        </div>
+        <button id="addTask" class="btn-add" data-active="false"><i id='icn' class="fas fa-plus"></i></button>
     </div>
 
 @endsection

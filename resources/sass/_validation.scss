@@ -1,0 +1,14 @@
+.validation {
+  display: block;
+}
+.validation__list {
+  list-style: none;
+}
+.validation__list-item {
+  background: #f8d7da;
+  padding: 0.5em;
+  border: $red;
+  color: $red;
+  margin-top: 0.3em;
+  border-radius: 10px;
+}

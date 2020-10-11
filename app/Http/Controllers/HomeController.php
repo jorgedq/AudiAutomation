@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Task;
+use App\Type;
 
 class HomeController extends Controller
 {
@@ -24,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $tareas = Task::orderBy('id', 'DESC')->get();
-        return view('home', compact('tareas'));
+        $types = Type::orderBy('id','ASC')->pluck('name','id');
+        return view('home', compact('types'));
     }
 }
