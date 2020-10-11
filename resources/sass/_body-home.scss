@@ -188,7 +188,7 @@
 .taskform-submit {
     outline: none;
     border: none;
-    background-color: rgb(15, 128, 15);
+    background: rgb(15, 128, 15);
     color: white;
     padding: 0.5em 0;
     cursor: pointer;
@@ -196,6 +196,9 @@
     border-radius: 5px;
     font-size: 1.1rem;
     font-weight: 700;
+    body.dark & {
+        background: $green;
+    }
 }
 
 .btn-add {

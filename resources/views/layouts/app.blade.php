@@ -78,7 +78,12 @@
                    
                 </ul>
             @endauth
-            <div class="darkmode">dark mode</div>
+            <div class="darkmode">
+                <label class="switch">
+                    <input class="switch__input" type="checkbox"/>
+                    <span class="switch__slider switch__slider--light"></span>
+                </label>
+            </div>
         </div>
         </Header>
         <main>
