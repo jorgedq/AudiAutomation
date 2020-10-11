@@ -11,6 +11,7 @@ body {
 }
 
 main {
+  position: relative;
   padding: 14vh 4em 0;
 }
 
@@ -113,17 +114,18 @@ header {
 }
 
 .card {
+  word-break: break-all;
   position: relative;
-  margin: 1em;
+  margin: 1em 0.7em;
   border: 1px solid #c2c1c1;
   border-radius: 10px;
   width: 20vw;
-  height: 45vh;
+  height: 40vh;
   max-width: 20vw;
   max-height: 45vh;
-  padding: 1em;
+  padding: 0.7em;
   display: grid;
-  grid-template-rows: 15% 75% 10%;
+  grid-template-rows: 20% 70% 10%;
   grid-template-areas: "cardHeader" "cardBody" "cardFooter";
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -146,6 +148,7 @@ header {
 
 .card .card__tittle {
   grid-area: cardHeader;
+  display: block;
   font-size: 1.3rem;
   font-weight: 700;
 }
@@ -186,6 +189,105 @@ header {
 
 .form {
   display: inline-block;
+}
+
+.newtask {
+  background: #f8fafc;
+  border: 1px solid #d4d3d3;
+  width: 20vw;
+  height: 50vh;
+  position: fixed;
+  right: calc((20vw + 20px + 1em) * -1);
+  bottom: 110px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 1em;
+  transition: 0.3s right;
+  box-shadow: 0 4px 4px #00000075;
+}
+.newtask.active-taskform {
+  right: 20px;
+  bottom: 110px;
+}
+
+.newtask__tittle {
+  border-radius: 5px;
+  padding: 0.3em 0;
+  font-weight: bold;
+  text-align: center;
+  color: blue;
+  text-shadow: 0 2px 2px #7070cc;
+  display: block;
+}
+
+.newtask__form {
+  margin-top: 0.5em;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.newtask__form-description {
+  resize: none;
+}
+
+.taskform-submit {
+  outline: none;
+  border: none;
+  background-color: #0f800f;
+  color: white;
+  padding: 0.5em 0;
+  cursor: pointer;
+  font-family: "Karla", sans-serif;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.btn-add {
+  color: white;
+  background: #1b6ca8;
+  height: 75px;
+  width: 75px;
+  border-radius: 37.5px;
+  position: fixed;
+  bottom: 20px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  right: 3em;
+}
+.btn-add i {
+  font-size: 2rem;
+}
+
+.btn-add:active,
+.btn-add:focus {
+  outline: none;
+}
+
+.btn-add:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 6px rgba(0, 0, 0, 0.5);
+}
+
+.validation {
+  display: block;
+}
+
+.validation__list {
+  list-style: none;
+}
+
+.validation__list-item {
+  background: #f8d7da;
+  padding: 0.5em;
+  border: #e3342f;
+  color: #e3342f;
+  margin-top: 0.3em;
+  border-radius: 10px;
 }
 
 /*# sourceMappingURL=app.css.map */

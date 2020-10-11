@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Task;
+use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
@@ -34,15 +35,19 @@ class TaskController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $id)
-    {           
+    public function store(Request $request)
+    {  
+        $validatedData = $request->validate([
+            'titulo' => 'required|max:20',
+            'descripcion' => 'required|max:150',
+    ]   );
         $tareas = new Task;
-        $tareas->tittle=$request->title;
-        $tareas->description=$request->description;
-        $tareas->user_id=$id;
+        $tareas->tittle=$request->titulo;
+        $tareas->description=$request->descripcion;
+        $tareas->user_id=Auth::user()->id;
         $tareas->type_id=$request->type_id;
         $tareas->save();
-        return redirect('home');
+        return redirect('/home');
     }
 
     /**
