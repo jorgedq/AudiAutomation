@@ -21,7 +21,7 @@
         <header>
         <nav class="navbar">
             <div class="left-section">
-                <a class="left-section__link" href="{{ url('/') }}">
+                <a class="left-section__link" href="/home">
                     Evaluación y auditoría de sistemas - automatización&nbsp;<i class="fas fa-vials"></i>
                 </a>
                 <!-- poner boton responsive -->
@@ -61,12 +61,22 @@
         </nav>
         <div class="options">
             @guest
-                <p class="txt-noauth" href="#">Crea y organiza rapidamente tus tareas diarias</p>
+                <p class="txt-noauth">Crea y organiza rapidamente tus tareas diarias</p>
             @endguest
             @auth
-            <a class="options__recicle">
-                <i class="fas fa-trash-restore"></i>&nbsp;Papelera De Reciclaje
-            </a>
+                <ul class="options">
+                     <li class="options__item options__item--home">
+                        <a class="options__link"  href="/home">
+                         <i class="fas fa-home"></i>&nbsp;Inicio
+                        </a>
+                    </li>
+                    <li class="options__item ">
+                        <a class="options__link options__link--red"  href="/recicle">
+                         <i class="fas fa-trash-restore"></i>&nbsp;Papelera De Reciclaje
+                        </a>
+                    </li>
+                   
+                </ul>
             @endauth
             <div class="darkmode">dark mode</div>
         </div>

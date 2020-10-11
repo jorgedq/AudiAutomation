@@ -15,6 +15,7 @@
         <script src="https://kit.fontawesome.com/2e148be222.js" crossorigin="anonymous"></script>
     </head>
     <body>
+    <header>
         <nav class="navbar">
             <div class="left-section">
                 <a class="left-section__link" href="{{ url('/') }}">
@@ -44,6 +45,18 @@
                 </ul>
             </div>
         </nav>
+        <div class="options">
+            @guest
+                <p class="txt-noauth" href="#">Crea y organiza rapidamente tus tareas diarias</p>
+            @endguest
+            @auth
+            <a class="options__recicle">
+                <i class="fas fa-trash-restore"></i>&nbsp;Papelera De Reciclaje
+            </a>
+            @endauth
+            <div class="darkmode">dark mode</div>
+        </div>
+        </header>
         <h1>INDEX PAGE</h1>
         </div>
     </body>

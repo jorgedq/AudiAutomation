@@ -47,8 +47,27 @@ header {
     justify-content: space-between;
     align-items: center;
 }
-.options__recicle {
+.options {
     margin-left: 4em;
+    list-style: none;
+}
+.options__item--home {
+    margin-right: 1em;
+}
+.options__link {
+    @include link-style(#666, 1rem);
+    &:hover {
+        color: #222;
+        text-decoration: underline;
+    }
+}
+.options__link--red {
+    @include link-style(#ca5f5b, 1rem);
+    &:hover {
+        color: $red;
+    }
+}
+.options__recicle {
     @include buttons-link(0.3em, 0.7em, $red);
     &:hover {
         text-decoration: underline;
