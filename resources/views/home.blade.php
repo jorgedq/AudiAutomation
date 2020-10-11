@@ -31,10 +31,10 @@
         <div class="newtask" id="taskform">
             <div class="newtask__tittle">Nueva Tarea</div>
             {!! Form::open(['url'=>'/task','id'=>'form-task', 'class'=>'newtask__form','method'=>'post']) !!}
-                {!! Form::select('type_id',$types, ['class'=>'']) !!}
-                {!! Form::text('titulo', null, ['class'=>'newtask__form-title','placeholder'=>'Título']) !!}
+                {!! Form::select('type_id',$types, ['class'=>'input-select']) !!}
+                {!! Form::text('titulo', null, ['class'=>'input newtask__form-title','placeholder'=>'Título']) !!}
                 <textarea
-                    class="newtask__form-description"
+                    class="input newtask__form-description"
                     name="descripcion"
                     id="description"
                     cols="30"

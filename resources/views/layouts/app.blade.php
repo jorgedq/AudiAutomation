@@ -16,12 +16,12 @@
     <!-- icons -->
     <script src="https://kit.fontawesome.com/2e148be222.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="dark">
     <div id="app">
         <header>
         <nav class="navbar">
             <div class="left-section">
-                <a class="left-section__link" href="/home">
+                <a class="left-section__link" href="/">
                     Evaluación y auditoría de sistemas - automatización&nbsp;<i class="fas fa-vials"></i>
                 </a>
                 <!-- poner boton responsive -->
