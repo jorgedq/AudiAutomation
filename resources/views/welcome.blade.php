@@ -44,7 +44,9 @@
                 </ul>
             </div>
         </nav>
-        <h1>INDEX PAGE</h1>
+        
+        <div class="imagen-welcome">
         </div>
+        <h1 class="titulo-principal">Sistema de Administracion de Tareas</h1>
     </body>
 </html>

@@ -25,7 +25,7 @@
 			</div>
 			<div>
 				<input type="submit" value="Ingresar" />
-				<a href="#">Olvidaste tu contraseña?</a>
+				<a href="{{ route('password.request') }}">Olvidaste tu contraseña?</a>
 			</div>      
         </form>
 	</section>
