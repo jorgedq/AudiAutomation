@@ -20,6 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/task', 'TaskController@create');
 Route::post('/task', 'TaskController@store');
+Route::get('/task/{id}','TaskController@edit');
+Route::put('/task/{id}', 'TaskController@update');
 Route::delete('/task/{id}', 'TaskController@destroy');
 
 //recicle bin routes

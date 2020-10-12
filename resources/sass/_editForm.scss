@@ -1,0 +1,67 @@
+.edit {
+  display: grid;
+  place-items: center;
+}
+.edit-form {
+  margin-top: 1em;
+  background-color: $bg-card-light;
+  width: 450px;
+  height: 500px;
+  border-radius: 10px;
+  padding: 1em 2em;
+  @include normal-shadow(0, 4px, 4px, rgba(0, 0, 0, 0.4));
+  body.dark & {
+    background: $bg-card-dark;
+    border: 1px solid #222222;
+    @include normal-shadow(0, 4px, 4px, rgba(0, 0, 0, 0.75));
+  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.edit-form__title {
+  text-align: center;
+  body.dark & {
+    color: $white;
+  }
+}
+.label-input {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.3em;
+  body.dark & {
+    color: $white;
+  }
+}
+.select_input,
+.text_input,
+.description_input {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #888;
+  padding: 0.5em;
+  &:focus {
+    border: 3px solid $navbar-color;
+  }
+}
+.description_input {
+  resize: none;
+}
+.button-edit-submit {
+  width: 100%;
+  padding: 0.8em 0.5em;
+  background: $blue;
+  cursor: pointer;
+  border-radius: 10px;
+  font-weight: 700;
+  color: white;
+  border: none;
+  transition: background 0.5s;
+  &:active {
+    outline: none;
+  }
+  body.dark & {
+    background: $green-dark;
+  }
+}

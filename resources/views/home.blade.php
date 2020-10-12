@@ -14,19 +14,23 @@
                 </ul>
             </div>
         @endif
+        @if(sizeof(Auth::user()->tasks) == 0)
+          <h2 class="empty-recicle-message">No existen registros de tareas</h2>
+        @else
         <div class="cards-section">
-        @foreach(Auth::user()->tasks as $tarea)
-            <article class="card {{$tarea->type->color}}">
-                <h2 class="card__tittle">{{$tarea->tittle}}</h2>
-                <p class="card__description">{{$tarea->description}}</p>
-                <div class="card__actions">
-                        {!! Form::open(['url'=>'task/'.$tarea->id, 'method'=>'DELETE','onsubmit'=>'return confirm("¿ Estas seguro de realizar esta acccion ?")']) !!}
-                            <button class="card__actions--delete"type="submit"><i class="fas fa-trash-alt icon icon--trash"></i></button>
-                        {!! Form::close() !!}
-                    <button class="card__actions--edit"><i class="fas fa-edit icon icon--edit"></i></button>
-                </div>
-            </article>
-        @endforeach
+            @foreach(Auth::user()->tasks as $tarea)
+                <article class="card {{$tarea->type->color}}">
+                    <h2 class="card__tittle">{{$tarea->tittle}}</h2>
+                    <p class="card__description">{{$tarea->description}}</p>
+                    <div class="card__actions">
+                            {!! Form::open(['url'=>'task/'.$tarea->id, 'method'=>'DELETE','onsubmit'=>'return confirm("¿ Estas seguro de realizar esta acccion ?")']) !!}
+                                <button class="card__actions--delete"type="submit"><i class="fas fa-trash-alt icon icon--trash"></i></button>
+                            {!! Form::close() !!}
+                        <a class="card__actions--edit" href="/task/{{$tarea->id}}"><i class="fas fa-edit icon icon--edit"></i></a>
+                    </div>
+                </article>
+            @endforeach
+        @endif
         <!-- Add Form Task -->
         <div class="newtask" id="taskform">
             <div class="newtask__tittle">Nueva Tarea</div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Task;
 use Illuminate\Support\Facades\Auth;
+use App\Type;
 
 class TaskController extends Controller
 {
@@ -40,7 +41,7 @@ class TaskController extends Controller
         $validatedData = $request->validate([
             'titulo' => 'required|max:40',
             'descripcion' => 'required|max:200',
-    ]   );
+        ]);
         $tareas = new Task;
         $tareas->tittle=$request->titulo;
         $tareas->description=$request->descripcion;
@@ -69,7 +70,9 @@ class TaskController extends Controller
      */
     public function edit($id)
     {
-        //
+        $types = Type::orderBy('id','ASC')->pluck('name','id');
+        $task = Task::find($id);
+        return view('tasks.editTask',compact('task','types'));
     }
 
     /**
@@ -81,6 +84,10 @@ class TaskController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validatedData = $request->validate([
+            'tittle' => 'required|max:40',
+            'description' => 'required|max:200',
+    ]   );
         $tareas = Task::find($id);
         $tareas->update($request->all());
         return redirect('home');
