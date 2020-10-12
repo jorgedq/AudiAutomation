@@ -678,7 +678,9 @@ body.dark .label-input {
 
 .select_input,
 .text_input,
-.description_input {
+.description_input,
+.email-input,
+.password-input {
   width: 100%;
   border-radius: 10px;
   border: 1px solid #888;
@@ -686,16 +688,24 @@ body.dark .label-input {
 }
 .select_input:focus,
 .text_input:focus,
-.description_input:focus {
+.description_input:focus,
+.email-input:focus,
+.password-input:focus {
   border: 3px solid #1b6ca8;
+  outline: none;
 }
 
 .description_input {
   resize: none;
 }
 
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
 .button-edit-submit {
-  width: 100%;
+  width: 170px;
   padding: 0.8em 0.5em;
   background: #3490dc;
   cursor: pointer;
@@ -710,6 +720,26 @@ body.dark .label-input {
 }
 body.dark .button-edit-submit {
   background: #00ff6a;
+}
+
+.button-edit-back {
+  width: 170px;
+  text-align: center;
+  padding: 0.8em 0.5em;
+  background: #e3342f;
+  cursor: pointer;
+  border-radius: 10px;
+  font-weight: 700;
+  color: white;
+  border: none;
+  text-decoration: none;
+  transition: background 0.5s;
+}
+.button-edit-back:active {
+  outline: none;
+}
+body.dark .button-edit-back {
+  background: #ff8000;
 }
 
 /*# sourceMappingURL=app.css.map */

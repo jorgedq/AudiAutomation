@@ -36,20 +36,27 @@
 }
 .select_input,
 .text_input,
-.description_input {
+.description_input,
+.email-input,
+.password-input {
   width: 100%;
   border-radius: 10px;
   border: 1px solid #888;
   padding: 0.5em;
   &:focus {
     border: 3px solid $navbar-color;
+    outline: none;
   }
 }
 .description_input {
   resize: none;
 }
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
 .button-edit-submit {
-  width: 100%;
+  width: 170px;
   padding: 0.8em 0.5em;
   background: $blue;
   cursor: pointer;
@@ -63,5 +70,24 @@
   }
   body.dark & {
     background: $green-dark;
+  }
+}
+.button-edit-back {
+  width: 170px;
+  text-align: center;
+  padding: 0.8em 0.5em;
+  background: $red;
+  cursor: pointer;
+  border-radius: 10px;
+  font-weight: 700;
+  color: white;
+  border: none;
+  text-decoration: none;
+  transition: background 0.5s;
+  &:active {
+    outline: none;
+  }
+  body.dark & {
+    background: $orange-dark;
   }
 }

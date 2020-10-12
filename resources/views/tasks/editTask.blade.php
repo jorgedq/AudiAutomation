@@ -28,8 +28,9 @@
             <label class="label-input" for="description_input">Descripción</label>
             <textarea name="description" class="description_input" id="description_input" cols="30" rows="10">{{$task->description}}</textarea>
           </div>
-          <div class="">
-            {!! Form::submit('Guardar Cambios',['class'=>'button-edit-submit']) !!}  
+          <div class="buttons">
+            <a class="button-edit-back" href="/home">CANCELAR</a>
+            {!! Form::submit('GUARDAR CAMBIOS',['class'=>'button-edit-submit']) !!}  
           </div>
         {!! Form::close() !!}
     </div>
