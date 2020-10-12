@@ -140,6 +140,7 @@ body.dark .navbar {
 }
 
 .switch {
+  margin-top: 0.2em;
   position: relative;
   display: inline-block;
   width: 3.8rem;
@@ -185,7 +186,7 @@ body.dark .switch__slider {
   transition: transform 0.2s;
 }
 
-.switch__input:checked + .switch__slider::before {
+.switch__slider.active::before {
   transform: translate(1.8rem, -50%);
 }
 
