@@ -16,7 +16,7 @@
     <!-- icons -->
     <script src="https://kit.fontawesome.com/2e148be222.js" crossorigin="anonymous"></script>
 </head>
-<body class="">
+<body>
     <div id="app">
         <header>
         <nav class="navbar">
@@ -80,7 +80,8 @@
             @endauth
             <div class="darkmode">
                 <label class="switch">
-                    <input id="dark-check" class="switch__input" type="checkbox"/>
+                    <input id="dark-check" class="switch__input" type="checkbox"
+                    />
                     <span class="switch__slider"></span>
                 </label>
             </div>

@@ -1,7 +1,21 @@
 document.addEventListener('DOMContentLoaded', e => {
+  //initStyle()
   addTaskAction('addTask')
   darkMode()
 })
+// const initStyle = () => {
+//   const $switch = document.getElementById('dark-check')
+//   console.log(localStorage.getItem('dark_mode'));
+//   if (localStorage.getItem('dark_mode')) {
+//     $switch.addAttribute('checked','checked')
+//     activeDark()
+//     activeStorageDark()
+//   }else{
+//     destroyStorageDark()
+//     activeLight()
+//     $switch.removeAttribute('checked')
+//   }
+// }
 const darkMode = () => {
   const $dark = document.querySelector('.switch__slider')
   const $switch = document.getElementById('dark-check')
@@ -10,24 +24,29 @@ const darkMode = () => {
       e.target.matches('.switch__slider') ||
       e.target.matches('.switch__slider *')
     ) {
-      console.log(localStorage.getItem('dark_mode'))
+      
+      if(!$switch.checked){
+        activeLight()
+        destroyStorageDark()
+      }else{
+        activeStorageDark()
+        activeDark()
+      }
     }
   })
 }
-// const $themeToggle = document.getElementById('dark-check')
-// $themeToggle.addEventListener('click', () => {
-
-//   console.log(localStorage.getItem('dark_mode'))
-//   if (localStorage.getItem('dark_mode')) {
-//     document.body.classList.remove('dark')
-//     localStorage.setItem('dark_mode', false)
-//     $switch.setAttribute('class', 'switch__slider')
-//   } else {
-//     document.body.classList.add('dark')
-//     localStorage.setItem('dark_mode', true)
-//     $switch.setAttribute('class', 'switch__slider active')
-//   }
-// })
+function activeLight(){
+  document.body.classList.add('dark')
+}
+function activeStorageDark(){
+  localStorage.setItem('dark_mode',true)
+}
+function destroyStorageDark(){
+  localStorage.setItem('dark_mode',false)
+}
+function activeDark(){
+  document.body.classList.remove('dark')
+}
 //add task element
 const addTaskAction = id => {
   const $formTask = document.getElementById('taskform')
