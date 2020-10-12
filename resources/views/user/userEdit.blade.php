@@ -32,7 +32,7 @@
             <input id="password2_input" type="password" class="password-input" name="password_confirmation">
           </div>
           <div class="buttons">
-            <a class="button-edit-back" href="/">CANCELAR</a>
+            <a class="button-edit-back" href="/profile">CANCELAR</a>
             {!! Form::submit('GUARDAR CAMBIOS',['class'=>'button-edit-submit']) !!}  
           </div>
         {!! Form::close() !!}
