@@ -10,6 +10,7 @@
 }
 .cards-section {
     display: flex;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     margin-top: 1em;
 }
@@ -20,10 +21,12 @@
     margin: 1em 0.7em;
     border: 1px solid rgb(194, 193, 193);
     border-radius: 10px;
-    width: 20vw;
-    height: 40vh;
-    max-width: 20vw;
-    max-height: 45vh;
+    width: 275px;
+    height: 270px;
+    min-width: 250px;
+    max-width: 275px;
+    max-height: 270px;
+    max-height: 270px;
     padding: 0.7em;
     display: grid;
     grid-template-rows: 20% 70% 10%;
@@ -132,8 +135,12 @@
 .newtask {
     background: $body-bg;
     border: 1px solid rgb(212, 211, 211);
-    width: 20vw;
-    height: 50vh;
+    width: 270px;
+    min-width: 270px;
+    max-width: 270px;
+    height: 325px;
+    min-height: 325px;
+    max-height: 325px;
     position: fixed;
     right: calc((20vw + 20px + 1em) * -1);
     bottom: 110px;
@@ -163,7 +170,7 @@
     text-shadow: 0 2px 2px rgb(112, 112, 204);
     display: block;
     body.dark & {
-        color: white;
+        color: $orange;
         text-shadow: 0 2px 2px #000;
     }
 }
@@ -178,7 +185,7 @@
     resize: none;
 }
 .input {
-    border: none;
+    border: 1px solid #444;
     outline: none;
 }
 .input {
