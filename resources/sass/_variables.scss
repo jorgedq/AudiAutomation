@@ -1,13 +1,16 @@
 // Body
 $body-bg: #f8fafc;
+$body-dark: #303030;
 
 //navbar
 $navbar-color: #1b6ca8;
+$navbar-color-dark: #000;
 
 // Typography
 $font-family-tittle: "Karla", sans-serif;
 $font-family-body: "Lato", sans-serif;
 // Cards
+$white: #fff;
 $blue: #3490dc;
 $indigo: #6574cd;
 $purple: #9561e2;
@@ -18,10 +21,16 @@ $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
-
+$green-dark: rgb(0, 255, 106);
+$yellow-dark: #ffe600;
+$red-dark: #ff0800;
 //card colors
 $button-light: #444;
 $none: #888;
+$none-dark: rgb(236, 236, 236);
+$bg-card-light: #fff;
+$bg-card-dark: #525050;
+
 //zindex
 $uno: 9;
 $modal: 99;

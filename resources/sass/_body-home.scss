@@ -4,6 +4,9 @@
 .body-tittle {
     color: #444;
     margin-top: 0.5em;
+    body.dark & {
+        color: $white;
+    }
 }
 .cards-section {
     display: flex;
@@ -11,6 +14,7 @@
     margin-top: 1em;
 }
 .card {
+    background: $bg-card-light;
     word-break: break-all;
     position: relative;
     margin: 1em 0.7em;
@@ -27,30 +31,54 @@
         "cardHeader"
         "cardBody"
         "cardFooter";
+    transition: 0.5s border;
     @include normal-shadow(0, 4px, 4px, rgba(0, 0, 0, 0.25));
+    body.dark & {
+        background: $bg-card-dark;
+        border: 1px solid #222222;
+        @include normal-shadow(0, 4px, 4px, rgba(0, 0, 0, 0.75));
+    }
 }
 .card--none {
     @include card-border($none);
+    body.dark & {
+        @include card-border($none-dark);
+    }
 }
 .card--normal {
     @include card-border($green);
+    body.dark & {
+        @include card-border($green-dark);
+    }
 }
 .card--warning {
     @include card-border($yellow);
+    body.dark & {
+        @include card-border($yellow-dark);
+    }
 }
 .card--danger {
     @include card-border($red);
+    body.dark & {
+        @include card-border($red-dark);
+    }
 }
 .card .card__tittle {
     grid-area: cardHeader;
     display: block;
     font-size: 1.3rem;
     font-weight: 700;
+    body.dark & {
+        color: white;
+    }
 }
 .card__description {
     grid-area: cardBody;
     font-family: $font-family-body;
     font-size: 0.95rem;
+    body.dark & {
+        color: $white;
+    }
 }
 .card__actions {
     grid-area: cardFooter;
@@ -65,18 +93,36 @@
     outline: none;
     border: none;
     cursor: pointer;
+    background: $bg-card-light;
+    transition: 0.5s background;
     color: $button-light;
     &:hover {
         color: #000;
+    }
+    body.dark & {
+        background: $bg-card-dark;
+        color: $none;
+        &:hover {
+            color: $white;
+        }
     }
 }
 .card__actions--delete {
     outline: none;
     border: none;
     color: $button-light;
+    background: $bg-card-light;
+    transition: 0.5s background;
     cursor: pointer;
     &:hover {
         color: $red;
+    }
+    body.dark & {
+        background: $bg-card-dark;
+        color: $none;
+        &:hover {
+            color: $white;
+        }
     }
 }
 .form {
@@ -102,6 +148,10 @@
         right: 20px;
         bottom: 110px;
     }
+    body.dark & {
+        background: $bg-card-dark;
+        border: 1px solid #fff;
+    }
 }
 .newtask__tittle {
     border-radius: 5px;
@@ -109,9 +159,13 @@
     //background: blue;
     font-weight: bold;
     text-align: center;
-    color: blue;
+    color: $blue;
     text-shadow: 0 2px 2px rgb(112, 112, 204);
     display: block;
+    body.dark & {
+        color: white;
+        text-shadow: 0 2px 2px #000;
+    }
 }
 .newtask__form {
     margin-top: 0.5em;
@@ -123,10 +177,18 @@
 .newtask__form-description {
     resize: none;
 }
+.input {
+    border: none;
+    outline: none;
+}
+.input {
+    padding: 0.2em;
+    border-radius: 3px;
+}
 .taskform-submit {
     outline: none;
     border: none;
-    background-color: rgb(15, 128, 15);
+    background: rgb(15, 128, 15);
     color: white;
     padding: 0.5em 0;
     cursor: pointer;
@@ -134,11 +196,15 @@
     border-radius: 5px;
     font-size: 1.1rem;
     font-weight: 700;
+    body.dark & {
+        background: $green;
+    }
 }
 
 .btn-add {
     color: white;
     background: $navbar-color;
+    transition: 0.5s background;
     height: 75px;
     width: 75px;
     border-radius: 37.5px;
@@ -151,6 +217,10 @@
     i {
         font-size: 2rem;
     }
+    body.dark & {
+        background: $orange;
+        box-shadow: 0 4px 4px rgb(0, 0, 0, 0.75);
+    }
 }
 .btn-add:active,
 .btn-add:focus {
@@ -159,6 +229,7 @@
 .btn-add:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 6px rgb(0, 0, 0, 0.5);
+    box-shadow: 0 4px 4px rgb(0, 0, 0, 0.75);
 }
 
 .icon,

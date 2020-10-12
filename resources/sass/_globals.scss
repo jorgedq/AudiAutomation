@@ -1,15 +1,21 @@
 *,
 *::after,
 *::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 body {
-  font-family: $font-family-tittle;
+    background: $body-bg;
+    transition: 0.5s background;
+    min-width: 100vh;
+    font-family: $font-family-tittle;
+    &.dark {
+        background: $body-dark;
+    }
 }
 main {
-  //padding-top: 14vh;
-  position: relative;
-  @include wrapper(14vh, 4em);
+    //padding-top: 14vh;
+    position: relative;
+    @include wrapper(14vh, 4em);
 }

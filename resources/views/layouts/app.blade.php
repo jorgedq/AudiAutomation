@@ -16,12 +16,12 @@
     <!-- icons -->
     <script src="https://kit.fontawesome.com/2e148be222.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="">
     <div id="app">
         <header>
         <nav class="navbar">
             <div class="left-section">
-                <a class="left-section__link" href="/home">
+                <a class="left-section__link" href="/">
                     Evaluación y auditoría de sistemas - automatización&nbsp;<i class="fas fa-vials"></i>
                 </a>
                 <!-- poner boton responsive -->
@@ -78,13 +78,18 @@
                    
                 </ul>
             @endauth
-            <div class="darkmode">dark mode</div>
+            <div class="darkmode">
+                <label class="switch">
+                    <input id="dark-check" class="switch__input" type="checkbox"/>
+                    <span class="switch__slider"></span>
+                </label>
+            </div>
         </div>
         </Header>
         <main>
             @yield('content')
         </main>
     </div>
-    <script src="/js/app.js"></script>
+    <script src="{{asset('/js/app.js')}}"></script>
 </body>
 </html>
