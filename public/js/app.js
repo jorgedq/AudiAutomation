@@ -1,42 +1,39 @@
 document.addEventListener('DOMContentLoaded', e => {
-  //initStyle()
+  initStyle()
   addTaskAction('addTask')
   darkMode()
 })
-// const initStyle = () => {
-//   const $switch = document.getElementById('dark-check')
-//   console.log(localStorage.getItem('dark_mode'));
-//   if (localStorage.getItem('dark_mode')) {
-//     $switch.addAttribute('checked','checked')
-//     activeDark()
-//     activeStorageDark()
-//   }else{
-//     destroyStorageDark()
-//     activeLight()
-//     $switch.removeAttribute('checked')
-//   }
-// }
+const initStyle = () => {
+  if (localStorage.getItem('dark_mode') === 'true') {
+    activeDark()
+    activeSwitch()
+  }else{
+    activeLight()
+    destroySwitch()
+  }
+}
 const darkMode = () => {
   const $dark = document.querySelector('.switch__slider')
-  const $switch = document.getElementById('dark-check')
   document.addEventListener('click', e => {
     if (
       e.target.matches('.switch__slider') ||
       e.target.matches('.switch__slider *')
     ) {
-      
-      if(!$switch.checked){
+      if($dark.classList.contains('active')){
         activeLight()
         destroyStorageDark()
+        destroySwitch()
       }else{
         activeStorageDark()
         activeDark()
+        activeSwitch()
       }
+      
     }
   })
 }
 function activeLight(){
-  document.body.classList.add('dark')
+  document.body.classList.remove('dark')
 }
 function activeStorageDark(){
   localStorage.setItem('dark_mode',true)
@@ -45,7 +42,15 @@ function destroyStorageDark(){
   localStorage.setItem('dark_mode',false)
 }
 function activeDark(){
-  document.body.classList.remove('dark')
+  document.body.classList.add('dark')
+}
+function activeSwitch(){
+  const $dark = document.querySelector('.switch__slider')
+  $dark.classList.add('active')
+}
+function destroySwitch(){
+ const $dark = document.querySelector('.switch__slider')
+  $dark.classList.remove('active')
 }
 //add task element
 const addTaskAction = id => {
