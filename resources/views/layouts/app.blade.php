@@ -11,7 +11,6 @@
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- csss styles -->
-    <!-- link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}" -->
     <link rel="stylesheet" href="{{asset('/css/app.css')}}">
     <!-- icons -->
     <script src="https://kit.fontawesome.com/2e148be222.js" crossorigin="anonymous"></script>
@@ -22,7 +21,7 @@
         <nav class="navbar">
             <div class="left-section">
                 <a class="left-section__link" href="/">
-                    Evaluación y auditoría de sistemas - automatización&nbsp;<i class="fas fa-vials"></i>
+                    Tareas.me&nbsp;<i class="fas fa-vials"></i>
                 </a>
                 <!-- poner boton responsive -->
             </div>
@@ -30,12 +29,12 @@
                 <ul class="list">
                     @guest
                          <li class="list-item">
-                            <a class="list-link" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
+                            <a class="list-link" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}&nbsp;<i class="fas fa-sign-in-alt"></i></a>
                             
                         </li>
                           @if (Route::has('register'))
                             <li class="list-item">
-                                <a class="list-link" href="{{ route('register') }}">{{ __('Registrarse') }}<a>
+                                <a class="list-link" href="{{ route('register') }}">{{ __('Registrarse') }}&nbsp;<i class="fas fa-user-plus"></i><a>
                             </li>
                         @endif
                     @else

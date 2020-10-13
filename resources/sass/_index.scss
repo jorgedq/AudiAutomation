@@ -1,0 +1,36 @@
+.index {
+    margin-top: 1em;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 10px;
+    background-color: $navbar-color;
+    color: $white;
+    body.dark & {
+        background-color: $bg-card-dark;
+    }
+}
+.index--reverse {
+    flex-direction: row-reverse;
+}
+.index__section {
+    display: grid;
+    place-items: center;
+}
+.title__section,
+.title__body {
+    width: 400px;
+    text-align: center;
+}
+.title__section {
+    font-size: 2.3rem;
+}
+.title__body {
+    padding: 0.5em;
+    opacity: 0.8;
+}
+.index__img {
+    width: 40%;
+    object-fit: cover;
+}
