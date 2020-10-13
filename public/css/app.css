@@ -219,10 +219,10 @@ body.dark .body-tittle {
   margin: 1em 0.7em;
   border: 1px solid #c2c1c1;
   border-radius: 10px;
-  width: 275px;
+  width: 265px;
   height: 270px;
-  min-width: 250px;
-  max-width: 275px;
+  min-width: 265px;
+  max-width: 265px;
   max-height: 270px;
   max-height: 270px;
   padding: 0.7em;
@@ -771,6 +771,49 @@ body.dark .profile__email span {
   border-radius: 10px;
   background: #ffed4a;
   border: 1px solid #ffe600;
+}
+
+.index {
+  margin-top: 1em;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: space-evenly;
+  border-radius: 10px;
+  background-color: #1b6ca8;
+  color: #fff;
+}
+body.dark .index {
+  background-color: #525050;
+}
+
+.index--reverse {
+  flex-direction: row-reverse;
+}
+
+.index__section {
+  display: grid;
+  place-items: center;
+}
+
+.title__section,
+.title__body {
+  width: 400px;
+  text-align: center;
+}
+
+.title__section {
+  font-size: 2.3rem;
+}
+
+.title__body {
+  padding: 0.5em;
+  opacity: 0.8;
+}
+
+.index__img {
+  width: 40%;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=app.css.map */
