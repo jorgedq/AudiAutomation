@@ -7,7 +7,7 @@ const initStyle = () => {
   if (localStorage.getItem('dark_mode') === 'true') {
     activeDark()
     activeSwitch()
-  }else{
+  } else {
     activeLight()
     destroySwitch()
   }
@@ -19,37 +19,36 @@ const darkMode = () => {
       e.target.matches('.switch__slider') ||
       e.target.matches('.switch__slider *')
     ) {
-      if($dark.classList.contains('active')){
+      if ($dark.classList.contains('active')) {
         activeLight()
         destroyStorageDark()
         destroySwitch()
-      }else{
+      } else {
         activeStorageDark()
         activeDark()
         activeSwitch()
       }
-      
     }
   })
 }
-function activeLight(){
+function activeLight() {
   document.body.classList.remove('dark')
 }
-function activeStorageDark(){
-  localStorage.setItem('dark_mode',true)
+function activeStorageDark() {
+  localStorage.setItem('dark_mode', true)
 }
-function destroyStorageDark(){
-  localStorage.setItem('dark_mode',false)
+function destroyStorageDark() {
+  localStorage.setItem('dark_mode', false)
 }
-function activeDark(){
+function activeDark() {
   document.body.classList.add('dark')
 }
-function activeSwitch(){
+function activeSwitch() {
   const $dark = document.querySelector('.switch__slider')
   $dark.classList.add('active')
 }
-function destroySwitch(){
- const $dark = document.querySelector('.switch__slider')
+function destroySwitch() {
+  const $dark = document.querySelector('.switch__slider')
   $dark.classList.remove('active')
 }
 //add task element

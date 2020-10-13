@@ -40,7 +40,7 @@
                         @endif
                     @else
                         <li class="list-item">
-                            <a class="list-link list-link--name" href="#" role="button">
+                            <a class="list-link list-link--name" href="/profile" role="button">
                                 {{ Auth::user()->name }}&nbsp;<i class="fas fa-user"></i>
                             </a>
                             
